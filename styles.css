@@ -1,0 +1,41 @@
+:root {
+  color-scheme: dark light;
+  --background: #101319;
+  --foreground: #eaf1f7;
+  --muted: #a2afbf;
+  --surface: #1c2330;
+  --border: #333e50;
+  --viz-series-1: #61e6ca;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background: var(--background);
+  color: var(--foreground);
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: clamp(18px, 5vw, 64px) 18px; }
+main { max-width: 900px; margin: auto; }
+h1 { margin: 0; font-size: clamp(28px, 5vw, 42px); font-weight: 500; letter-spacing: -.04em; }
+.eyebrow { color: var(--viz-series-1); font-size: 12px; letter-spacing: .18em; }
+#pulse-lab { display: grid; gap: 20px; }
+.viz-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.text-small, .footnote { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+.footnote { margin-top: 32px; }
+#pl-canvas { display: block; width: 100%; height: 320px; }
+.viz-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.form-label { display: grid; gap: 8px; flex: 1 1 250px; min-width: 0; }
+.btn, .form-control, .form-select { font: inherit; color: var(--foreground); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 11px 14px; max-width: 100%; min-width: 0; }
+.btn { cursor: pointer; min-height: 44px; }
+.btn:hover { border-color: var(--viz-series-1); }
+.btn-primary { background: var(--viz-series-1); color: #10251e; border-color: transparent; }
+.btn:disabled { opacity: .5; cursor: wait; }
+.form-range { width: 100%; accent-color: var(--viz-series-1); min-height: 32px; }
+.form-control { width: 100%; }
+.form-control::file-selector-button { font: inherit; margin-right: 10px; }
+:focus-visible { outline: 3px solid var(--viz-series-1); outline-offset: 4px; }
+.text-destructive { color: #ffacac; }
+#pl-error:empty { display: none; }
+@media (prefers-color-scheme: light) {
+  :root { --background: #f5f8fa; --foreground: #172633; --muted: #516474; --surface: #fff; --border: #c8d4dd; --viz-series-1: #087c68; }
+  .btn-primary { color: white; }
+  .text-destructive { color: #b32736; }
+}
